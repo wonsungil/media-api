@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    include: oauth
+
+server:
+  port: 9100
+  error:
+    include-exception: false
+    include-message: always
+    include-stacktrace: on_param
+    whitelabel:
+      enabled: true
+
+logging:
+  config: classpath:log4j2.xml

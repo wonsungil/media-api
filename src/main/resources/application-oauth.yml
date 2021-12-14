@@ -1,0 +1,11 @@
+#spring:
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          faceoobk:
+#            client-id: 353060026596522
+#            client-secret: c56197394bfba38829505f7f35dc1b67
+#            scope:
+#              - public_profile
+#              - email

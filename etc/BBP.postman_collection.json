@@ -1,0 +1,684 @@
+{
+	"info": {
+		"_postman_id": "6c6669d3-7574-47ea-8cb4-0d64a3149aa3",
+		"name": "BBP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Facebook",
+			"item": [
+				{
+					"name": "Campaign",
+					"item": [
+						{
+							"name": "Campaign 생성",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"adAccountId\": 1858500910996241\n    , \"name\":\"TEST-CAMP-06\"\n    , \"objective\":\"LINK_CLICKS\"\n    , \"status\":\"PAUSED\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9100/facebook/campaign/create",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"campaign",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Campaign 수정",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 23848916749600653\n    , \"name\":\"TEST-CAMP-06\"\n    , \"objective\":\"LINK_CLICKS\"\n    , \"status\":\"PAUSED\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9100/facebook/campaign/update",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"campaign",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CampaignList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9100/facebook/campaign/1858500910996241/campaigns",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"campaign",
+										"1858500910996241",
+										"campaigns"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Campiagn 조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9100/facebook/campaign/23848910398810653",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"campaign",
+										"23848910398810653"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Business",
+					"item": [
+						{
+							"name": "Business 조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9100/facebook/business/1341994392882236",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"business",
+										"1341994392882236"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Business 조회(AdAccount포함)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9100/facebook/business/1341994392882236/owned-ad-accounts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"business",
+										"1341994392882236",
+										"owned-ad-accounts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "User 조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9100/facebook/user/{userId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"user",
+										"{userId}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User(Me) 조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9100/facebook/user/me",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"user",
+										"me"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AdAccount",
+					"item": [
+						{
+							"name": "AdAccount 조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9100/facebook/ad-account/1858500910996241",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"ad-account",
+										"1858500910996241"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AdAccount 생성",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"businessId\": \"1341994392882236\",\n    \"name\": \"T-AD-ACCOUNT-02\",\n    \"timeZoneId\": \"79\",\n    \"currency\": \"KRW\",\n    \"partner\": null,\n    \"endAdvertiser\": \"1341994392882236\",\n    \"mediaAgency\": null,\n    \"invoice\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9100/facebook/ad-account/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"ad-account",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AdSet",
+					"item": [
+						{
+							"name": "AdSet 생성",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"adAccountId\":1858500910996241,\n    \"name\": \"Ad_Set_01\",\n    \"campaignId\" : 23848916749600653,\n    \"bidAmount\" : 50000,\n    \"bidStrategy\": \"LOWEST_COST_WITH_BID_CAP\",\n    \"billingEvent\": \"LINK_CLICKS\",\n    \"dailyBudget\": 1000000,\n    \"destinationType\": \"FACEBOOK\",\n    \"startTime\": \"2021-11-05 00:00:00\",\n    \"endTime\":\"2021-11-31 23:59:59\",\n    \"optimizationGoal\": \"LINK_CLICKS\",\n    \"promotedObject\": \"{\\\"page_id\\\":\\\"100739179075359\\\"}\",\n    \"ageMax\": 60,\n    \"ageMin\": 20,\n    \"genders\": [1, 2],\n    \"status\":\"PAUSED\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9100/facebook/ad-set/create",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"ad-set",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Targeting",
+					"item": [
+						{
+							"name": "GeoTargeting  조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9100/facebook/targeting/geoTargeting?location_types=country&type=adgeolocation&q=korea",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"targeting",
+										"geoTargeting"
+									],
+									"query": [
+										{
+											"key": "location_types",
+											"value": "country"
+										},
+										{
+											"key": "type",
+											"value": "adgeolocation"
+										},
+										{
+											"key": "q",
+											"value": "korea"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deviceTargeting  조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9100/facebook/targeting/deviceTargeting?type=adTargetingCategory&class=user_device&q=ipad",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"targeting",
+										"deviceTargeting"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "adTargetingCategory"
+										},
+										{
+											"key": "class",
+											"value": "user_device"
+										},
+										{
+											"key": "q",
+											"value": "ipad"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "InterestTargeting  조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9100/facebook/targeting/interestTargeting?type=adinterest&q=빵",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"facebook",
+										"targeting",
+										"interestTargeting"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "adinterest"
+										},
+										{
+											"key": "q",
+											"value": "빵"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ad",
+					"item": [
+						{
+							"name": "Ad 생성",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Google",
+			"item": [
+				{
+					"name": "Customer-Client-Link",
+					"item": [
+						{
+							"name": "CustomerClientLink 조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9100/google/customer-client-link/customer-client/4624145835",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"google",
+										"customer-client-link",
+										"customer-client",
+										"4624145835"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Customer-Client",
+					"item": [
+						{
+							"name": "CustomerClient 생성",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9100/google/customer-client/create?advertiserName=TST_110802",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"google",
+										"customer-client",
+										"create"
+									],
+									"query": [
+										{
+											"key": "advertiserName",
+											"value": "TST_110802"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CustomerClient 조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9100/google/customer-client/4759276980",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"google",
+										"customer-client",
+										"4759276980"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "Customer조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9100/google/customer/9462693842",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"google",
+										"customer",
+										"9462693842"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "접근 가능한 CustmerList 조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9100/google/customer/accessible-customers",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"google",
+										"customer",
+										"accessible-customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "하위 계정 리스트 조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9100/google/customer/sub-customers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"google",
+										"customer",
+										"sub-customers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Campaign",
+					"item": [
+						{
+							"name": "Campaign 생성",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"camp-01\",\n    \"customerId\": 6583317631,\n    \"channelType\": \"SEARCH\",\n    \"amount\": \"1000000\",\n    \"startDate\":\"20211112\",\n    \"endDate\":\"20211231\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9100/google/campaign/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"google",
+										"campaign",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Campaign  조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9100/google/campaign/6583317631/15217617109",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"google",
+										"campaign",
+										"6583317631",
+										"15217617109"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AdGroup",
+					"item": [
+						{
+							"name": "AdGroup 생성",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"\",\n    \"status\":\"\",\n    \"campaign\":\"\",\n    \"type\":\"\",\n    \"cpcBidMicros\":\"\",\n    \"cusotmerId\":\"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "AdGroupList 조회",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9100/google/ad-group/7378590286",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"google",
+										"ad-group",
+										"7378590286"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

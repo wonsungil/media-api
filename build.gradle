@@ -1,0 +1,45 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.bbp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'org.mapstruct:mapstruct:1.4.2.Final', 'org.projectlombok:lombok'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final', 'org.projectlombok:lombok', 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'com.restfb:restfb:3.22.0'
+    implementation 'com.google.api-ads:google-ads:16.0.0'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.0'
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.13.0'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.13.0'
+    implementation group: 'joda-time', name: 'joda-time', version: '2.3'
+    implementation group: 'com.facebook.business.sdk', name: 'facebook-java-business-sdk', version: '12.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+}
+
+test {
+    useJUnitPlatform()
+}
